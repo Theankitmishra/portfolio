@@ -1400,7 +1400,7 @@ document.addEventListener('DOMContentLoaded', () => {
           '<strong>Live Portfolio</strong>: <a href="https://portfolio-virid-nu-3wnb5oe7nu.vercel.app" target="_blank" rel="noopener noreferrer" style="color:#38bdf8; text-decoration:underline;">portfolio-virid-nu-3wnb5oe7nu.vercel.app</a>',
           '<strong>LinkedIn</strong>: <a href="https://www.linkedin.com/in/theankitmishraa/" target="_blank" rel="noopener noreferrer" style="color:#38bdf8; text-decoration:underline;">linkedin.com/in/theankitmishraa</a>',
           '<strong>GitHub</strong>: <a href="https://github.com/Theankitmishra" target="_blank" rel="noopener noreferrer" style="color:#38bdf8; text-decoration:underline;">github.com/Theankitmishra</a>',
-          '<strong>Education</strong>: M.Tech in Computer Science @ Delhi Technological University (2024–2026, <strong>CGPA: 7.72 / 10.0</strong>) · B.Tech in CS @ Bikaner Technical University (2018–2022, <strong>CGPA: 8.24 / 10.0</strong>).'
+          '<strong>Education</strong>: M.Tech in Computer Science @ Delhi Technological University (2024–2026, <strong>CGPA: 7.92 / 10.0</strong>) · B.Tech in CS @ Bikaner Technical University (2020–2024, <strong>CGPA: 8.24 / 10.0</strong>).'
         ],
         highlight: '📍 <strong>Status</strong>: Available for full-time engineering roles, AI system architecture, and cloud/backend opportunities.',
         techDetails: {
@@ -1495,7 +1495,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const systemPrompt = `You are the AI Portfolio Assistant for Ankit Kumar Mishra.
 Ankit's Profile:
-- Pursuing M.Tech in CS at Delhi Technological University (DTU, 2024–2026, CGPA: 7.72). B.Tech in CS from BTU (CGPA: 8.24).
+- Pursuing M.Tech in CS at Delhi Technological University (DTU, 2024–2026, CGPA: 7.92). B.Tech in CS from BTU (2020–2024, CGPA: 8.24).
 - Thesis Research: 4-bit NF4 quantized DeepSeek-Coder-6.7B model for Java fault localization on Defects4J (slashed memory by 71.6% from 14.8GB to 4.2GB with <1.2% mutation delta).
 - Key Projects: 1) Self-Correcting Multi-Agent AI System (LangGraph StateGraph, Researcher, Writer, Reviewer Judge, Human-in-the-Loop gates, FastAPI). 2) AWS Cloud Log Analytics & Anomaly Detection (ALB TLS 1.3, EC2 Auto Scaling, RDS Multi-AZ, Lambda IsolationForest, SSE real-time streaming, IMDSv2).
 - Skills: Python, C++, SQL, Bash, LangGraph, LangChain, PyTorch, Hugging Face, BitsAndBytes, Scikit-learn, AWS, Docker, Terraform, FastAPI, PostgreSQL.
