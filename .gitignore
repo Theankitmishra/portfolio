@@ -1,0 +1,17 @@
+# Operating System Files
+.DS_Store
+Thumbs.db
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Nested standalone repositories
+cloud/
+cloud-log-analytics/
+self-correcting-multi-agent/
+
+# Local Environment
+.env
+.vercel/

@@ -1,0 +1,1397 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ankit Kumar Mishra — AI/LLM &amp; Cloud Engineer</title>
+  <meta name="description" content="Ankit Kumar Mishra — M.Tech Computer Science at Delhi Technological University. Building Agentic AI Systems, LLM Mutation Testing Research, and Production AWS Cloud Infrastructure." />
+  
+  <!-- Fonts: Clash Display, Satoshi, Plus Jakarta Sans, Yellowtail, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@300,400,500,600,700&f[]=satoshi@400,500,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Yellowtail&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  
+  <!-- GSAP & ScrollTrigger (GreenSock Animation Platform) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="loading">
+  <!-- =====================================================================
+       CUSTOM CURSOR (GSAP-POWERED MAGNETIC DOT + TRAILING VIOLET RING)
+       ===================================================================== -->
+  <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+  <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+
+  <!-- =====================================================================
+       ENTRY MESSAGE / PRELOADER (FROM AADARSHRAI.VERCEL.APP, ZERO LAG)
+       ===================================================================== -->
+  <div class="loading-container" id="loadingContainer">
+    <div class="loading-screen" id="loadingScreen">
+      <div class="loading-words" id="loadingWords">
+        <h2 class="home-active home-active-first"><span class="dot"></span>Hello</h2>
+        <h2 class="home-active"><span class="dot"></span>Bonjour</h2>
+        <h2 class="home-active"><span class="dot"></span>नमस्ते</h2>
+        <h2 class="home-active"><span class="dot"></span>Ciao</h2>
+        <h2 class="home-active"><span class="dot"></span>Olá</h2>
+        <h2 class="home-active jap"><span class="dot"></span>こんにちは</h2>
+        <h2 class="home-active"><span class="dot"></span>Hallå</h2>
+        <h2 class="home-active"><span class="dot"></span>Guten tag</h2>
+        <h2 class="home-active home-active-last"><span class="dot"></span>Namaste</h2>
+      </div>
+      <!-- Smooth GPU-composited curved bottom edge -->
+      <svg class="curtain-curve" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,0 L1440,0 Q720,120 0,0 Z" />
+      </svg>
+    </div>
+  </div>
+
+  <!-- Top Scroll Progress Bar -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- Architectural Obys Grid Background Guides -->
+  <div class="grid-guides" aria-hidden="true">
+    <div class="grid-line"></div>
+    <div class="grid-line"></div>
+    <div class="grid-line"></div>
+    <div class="grid-line"></div>
+  </div>
+
+  <!-- Clean Sticky Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="#top" class="logo magnetic-btn" id="replayIntroBtn" title="Click to replay greeting">
+        <span class="logo-mark">AM</span>
+        <span class="logo-name">Ankit Kumar Mishra</span>
+      </a>
+
+      <nav class="nav" id="navMenu" aria-label="Main navigation">
+        <a href="#about" class="nav-item"><span>About</span><i class="nav-line"></i></a>
+        <a href="#projects" class="nav-item"><span>Projects</span><i class="nav-line"></i></a>
+        <a href="#research" class="nav-item"><span>Research</span><i class="nav-line"></i></a>
+        <a href="#experience" class="nav-item"><span>Experience</span><i class="nav-line"></i></a>
+        <a href="#skills" class="nav-item"><span>Skills</span><i class="nav-line"></i></a>
+        <a href="#contact" class="nav-item"><span>Contact</span><i class="nav-line"></i></a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-btn magnetic-btn" id="themeToggle" aria-label="Toggle theme" title="Toggle Dark / Light Mode">
+          <svg class="sun-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          <svg class="moon-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <a href="mailto:theankitmishraa@gmail.com" class="btn btn-sm magnetic-btn">Hire Me</a>
+        <button class="menu-btn" id="menuBtn" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top" class="page-content">
+    <!-- ===================================================================
+         HERO SECTION (Clean Layout + Cosmic Violet Glow, Chrome & Typewriter)
+         =================================================================== -->
+    <section class="hero" id="about">
+      <!-- Lightweight GPU Canvas for Ambient Twinkling Dust -->
+      <canvas class="hero-canvas" id="heroCanvas" aria-hidden="true"></canvas>
+
+      <!-- Ambient Violet Glow Orbs -->
+      <div class="hero-glow-outer" aria-hidden="true"></div>
+      <div class="hero-glow-mid" aria-hidden="true"></div>
+      <div class="hero-glow-beam" aria-hidden="true"></div>
+
+      <div class="container hero-container">
+        <!-- Obys Corner Crosshairs -->
+        <span class="grid-cross grid-cross-tl" aria-hidden="true">+</span>
+        <span class="grid-cross grid-cross-tr" aria-hidden="true">+</span>
+
+        <div class="hero-meta-row anim-up-1">
+          <div class="status-badge">
+            <span class="status-dot"></span>
+            <span>M.Tech CS @ Delhi Technological University · Open to Opportunities</span>
+          </div>
+          <div class="obys-coord-tag">
+            <span class="coord-prefix">LOC:</span> 28.7501° N, 77.1177° E · DTU
+          </div>
+        </div>
+
+        <p class="hero-greeting anim-up-1">
+          HEY, I’M <span class="script-accent">Ankit</span>
+        </p>
+
+        <h1 class="hero-title anim-up-2" id="heroTitle">
+          Ankit Kumar Mishra
+        </h1>
+
+        <p class="hero-subtitle anim-up-3">
+          <span class="hero-role-prefix">I’m an </span>
+          <span class="typewriter-text" id="typewriterText">AI/LLM Systems Engineer</span><span class="typewriter-cursor" aria-hidden="true">|</span>
+        </p>
+
+        <p class="hero-bio anim-up-3">
+          I’m an M.Tech Computer Science student at <strong>Delhi Technological University (DTU)</strong> specialising in <strong>Agentic AI workflows</strong>, <strong>LLM-based software testing research</strong>, and <strong>production-grade AWS infrastructure</strong>. I enjoy building systems that are reliable by design—from self-correcting LangGraph agents to zero-downtime Terraform deployments.
+        </p>
+
+        <!-- Chrome Role Pills (Magnetic on Hover) -->
+        <div class="hero-pills anim-up-4">
+          <span class="chrome-pill magnetic-btn">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            <span>The AI Architect</span>
+          </span>
+          <span class="chrome-pill magnetic-btn">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+            <span>The Cloud Builder</span>
+          </span>
+          <span class="chrome-pill magnetic-btn">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            <span>The Researcher</span>
+          </span>
+        </div>
+
+        <div class="hero-links anim-up-4">
+          <a href="#projects" class="btn btn-primary magnetic-btn">View Projects</a>
+          <a href="https://github.com/Theankitmishra" target="_blank" rel="noopener noreferrer" class="btn btn-secondary magnetic-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            <span>GitHub</span>
+          </a>
+          <a href="https://www.linkedin.com/in/theankitmishraa/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary magnetic-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            <span>LinkedIn</span>
+          </a>
+          <button type="button" class="btn btn-secondary copy-btn magnetic-btn" data-copy="theankitmishraa@gmail.com">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            <span>theankitmishraa@gmail.com</span>
+          </button>
+        </div>
+
+        <!-- =================================================================
+             OBYS RECTANGULAR MODULAR METRICS GRID (4 CELLS, CRISP HAIRLINES)
+             ================================================================= -->
+        <div class="obys-metrics-grid anim-up-5">
+          <div class="obys-grid-cell">
+            <div class="cell-head">
+              <span class="cell-num">[ 01 ]</span>
+              <span class="cell-status">COMPLETED</span>
+            </div>
+            <div class="cell-metric">
+              <span class="metric-val" data-counter="7.72">7.72</span>
+              <span class="metric-unit">/ 10.0</span>
+            </div>
+            <div class="cell-body">
+              <strong>M.Tech in CS</strong>
+              <span>Delhi Technological University</span>
+            </div>
+          </div>
+
+          <div class="obys-grid-cell">
+            <div class="cell-head">
+              <span class="cell-num">[ 02 ]</span>
+              <span class="cell-status">GRADUATED</span>
+            </div>
+            <div class="cell-metric">
+              <span class="metric-val" data-counter="8.24">8.24</span>
+              <span class="metric-unit">/ 10.0</span>
+            </div>
+            <div class="cell-body">
+              <strong>B.Tech in CS</strong>
+              <span>Bikaner Technical University</span>
+            </div>
+          </div>
+
+          <div class="obys-grid-cell">
+            <div class="cell-head">
+              <span class="cell-num">[ 03 ]</span>
+              <span class="cell-status">IN PROGRESS</span>
+            </div>
+            <div class="cell-metric">
+              <span class="metric-val">DeepSeek</span>
+              <span class="metric-unit">6.7B</span>
+            </div>
+            <div class="cell-body">
+              <strong>4-bit NF4 Research</strong>
+              <span>Defects4J Mutation Testing</span>
+            </div>
+          </div>
+
+          <div class="obys-grid-cell">
+            <div class="cell-head">
+              <span class="cell-num">[ 04 ]</span>
+              <span class="cell-status">DEPLOYED</span>
+            </div>
+            <div class="cell-metric">
+              <span class="metric-val">AWS</span>
+              <span class="metric-unit">+ LangGraph</span>
+            </div>
+            <div class="cell-body">
+              <strong>Production Ready</strong>
+              <span>Cyclic Multi-Agent &amp; Cloud</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         PROJECTS SECTION (Obys Rectangular Grid Architecture + GSAP 3D Tilt)
+         =================================================================== -->
+    <section class="section gsap-reveal-section" id="projects">
+      <div class="section-divider-glow" aria-hidden="true"></div>
+      <div class="container">
+        <!-- Obys Section Coordinate Header -->
+        <div class="obys-section-bar">
+          <span class="obys-section-index">[ 01 // SELECTED WORK ]</span>
+          <span class="obys-section-spec">RECTANGULAR MODULAR SYSTEM</span>
+        </div>
+
+        <div class="section-header">
+          <span class="section-tag">PROJECTS</span>
+          <h2 class="section-title">Featured Engineering Work</h2>
+          <p class="section-subtitle">Production-focused systems built around stateful multi-agent orchestration and hardened cloud infrastructure.</p>
+        </div>
+
+        <div class="project-grid">
+          <!-- Project 1 -->
+          <article class="project-card obys-card gsap-tilt-card">
+            <!-- Corner Crosses -->
+            <span class="grid-cross grid-cross-tl" aria-hidden="true">+</span>
+            <span class="grid-cross grid-cross-tr" aria-hidden="true">+</span>
+            <span class="grid-cross grid-cross-bl" aria-hidden="true">+</span>
+            <span class="grid-cross grid-cross-br" aria-hidden="true">+</span>
+            
+            <div class="card-spotlight" aria-hidden="true"></div>
+            <div class="card-top-shimmer" aria-hidden="true"></div>
+
+            <div class="project-card-top">
+              <div class="project-meta-bar">
+                <span class="obys-index">[ 01 / 02 ]</span>
+                <span class="project-category">Agentic AI &amp; Backend Systems</span>
+                <span class="card-badge-status"><i class="status-pulse"></i> LIVE</span>
+              </div>
+              <h3 class="project-name">Self-Correcting Multi-Agent AI System</h3>
+              <p class="project-summary">
+                A cyclic multi-agent system where specialised AI personas collaborate, critique, and refine generated content with human-in-the-loop safety gates.
+              </p>
+
+              <ul class="clean-list">
+                <li>Architected an enterprise multi-agent system using <strong>LangGraph StateGraph</strong> where specialised AI agents (<strong>Writer</strong>, <strong>Reviewer Judge</strong>, <strong>Reviser</strong>) collaborate through stateful, cyclic workflows to autonomously generate, critique, and self-correct content.</li>
+                <li>Implemented dynamic self-correcting feedback loops with an <strong>Agent-as-a-Judge</strong> evaluation pattern, scoring drafts across 4 strict verification rubrics and eliminating hallucinations common in single-pass LLM prompts.</li>
+                <li>Engineered multi-provider LLM support across <strong>OpenAI</strong>, <strong>DigitalOcean Serverless GenAI</strong>, and <strong>Groq LPU</strong>, with conditional routing logic and Human-in-the-Loop (HITL) safety gates.</li>
+                <li>Deployed as a production-grade <strong>FastAPI</strong> microservice with real-time <strong>Server-Sent Events (SSE)</strong> streaming, persistent state checkpointing, and Docker containerization.</li>
+              </ul>
+            </div>
+
+            <div class="project-card-bottom">
+              <div class="arch-pill-flow" aria-label="System workflow">
+                <span>Writer (Draft)</span>
+                <span class="arrow">→</span>
+                <span class="accent-node">Reviewer (Judge)</span>
+                <span class="arrow">⇄</span>
+                <span>Reviser (Self-Correction)</span>
+                <span class="arrow">→</span>
+                <span class="ok-node">Verified Output</span>
+              </div>
+
+              <div class="tag-list">
+                <span class="shiny-tag magnetic-btn">Python</span>
+                <span class="shiny-tag magnetic-btn">LangGraph</span>
+                <span class="shiny-tag magnetic-btn">Agent-as-a-Judge</span>
+                <span class="shiny-tag magnetic-btn">FastAPI</span>
+                <span class="shiny-tag magnetic-btn">Docker</span>
+                <span class="shiny-tag magnetic-btn">SSE Streaming</span>
+              </div>
+
+              <div class="project-actions">
+                <button type="button" class="btn btn-primary magnetic-btn launch-agent-btn" id="openAgentModalBtn">
+                  <span class="live-pulse-dot" aria-hidden="true"></span>
+                  <span>Ask AI Assistant (Live Demo)</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                </button>
+                <a href="https://github.com/Theankitmishra/self-correcting-multi-agent" target="_blank" rel="noopener noreferrer" class="btn btn-secondary magnetic-btn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                  <span>View Repository (GitHub)</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="project-card obys-card gsap-tilt-card">
+            <!-- Corner Crosses -->
+            <span class="grid-cross grid-cross-tl" aria-hidden="true">+</span>
+            <span class="grid-cross grid-cross-tr" aria-hidden="true">+</span>
+            <span class="grid-cross grid-cross-bl" aria-hidden="true">+</span>
+            <span class="grid-cross grid-cross-br" aria-hidden="true">+</span>
+
+            <div class="card-spotlight" aria-hidden="true"></div>
+            <div class="card-top-shimmer" aria-hidden="true"></div>
+
+            <div class="project-card-top">
+              <div class="project-meta-bar">
+                <span class="obys-index">[ 02 / 02 ]</span>
+                <span class="project-category">Cloud Infrastructure &amp; MLOps</span>
+                <span class="card-badge-status"><i class="status-pulse"></i> HIGH AVAILABILITY</span>
+              </div>
+              <h3 class="project-name">Cloud Log Analytics &amp; Anomaly Detection</h3>
+              <p class="project-summary">
+                A hardened, high-availability AWS log ingestion platform with real-time SSE streaming and scheduled serverless ML anomaly detection.
+              </p>
+
+              <ul class="clean-list">
+                <li>Built a production-grade cloud log analytics platform on AWS using <strong>EC2 Auto Scaling Groups</strong>, <strong>Application Load Balancer (HTTPS/TLS 1.3)</strong>, <strong>RDS PostgreSQL (Multi-AZ, encrypted)</strong>, and <strong>CloudWatch Logs</strong> for real-time log ingestion via <strong>SSE</strong>.</li>
+                <li>Implemented a scheduled <strong>AWS Lambda</strong> anomaly detector (<strong>EventBridge, every 5 min</strong>) using <strong>scikit-learn IsolationForest</strong> on 4-feature time-bucket aggregates; routes <code>CRITICAL</code>/<code>HIGH</code> alerts to <strong>SNS (Email + Slack)</strong>.</li>
+                <li>Hardened infrastructure with <strong>IMDSv2</strong>, least-privilege Security Groups, <strong>non-root Docker containers</strong>, <strong>Trivy CVE scanning</strong>, and Terraform-managed secrets via <strong>AWS Secrets Manager</strong>; automated zero-downtime rolling deploys.</li>
+              </ul>
+            </div>
+
+            <div class="project-card-bottom">
+              <div class="arch-pill-flow" aria-label="System workflow">
+                <span>ALB (TLS 1.3) + EC2 ASG</span>
+                <span class="arrow">→</span>
+                <span>RDS Multi-AZ + SSE</span>
+                <span class="arrow">→</span>
+                <span class="accent-node">Lambda IsolationForest</span>
+                <span class="arrow">→</span>
+                <span class="ok-node">SNS (Slack/Email)</span>
+              </div>
+
+              <div class="tag-list">
+                <span class="shiny-tag magnetic-btn">AWS (EC2 &amp; Lambda)</span>
+                <span class="shiny-tag magnetic-btn">FastAPI</span>
+                <span class="shiny-tag magnetic-btn">Terraform (IaC)</span>
+                <span class="shiny-tag magnetic-btn">Docker</span>
+                <span class="shiny-tag magnetic-btn">scikit-learn</span>
+                <span class="shiny-tag magnetic-btn">IMDSv2 &amp; Trivy</span>
+              </div>
+
+              <div class="project-actions">
+                <button type="button" class="btn btn-primary magnetic-btn launch-cloud-btn" id="openCloudDemoBtn">
+                  <span class="live-pulse-dot cyan-pulse" aria-hidden="true"></span>
+                  <span>Architecture Deep Dive (AI Demo)</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                </button>
+                <button type="button" class="btn btn-secondary magnetic-btn telemetry-gallery-btn" id="openCloudGalleryBtn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                  <span>Live Telemetry &amp; Screenshots</span>
+                  <span class="tag-count-chip">4 Views</span>
+                </button>
+                <a href="https://github.com/Theankitmishra/cloud-log-analytics" target="_blank" rel="noopener noreferrer" class="btn btn-secondary magnetic-btn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                  <span>View Repository (GitHub)</span>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         RESEARCH SECTION (Obys Rectangular Modular Workbench)
+         =================================================================== -->
+    <section class="section section-alt gsap-reveal-section" id="research">
+      <div class="section-divider-glow" aria-hidden="true"></div>
+      <div class="container">
+        <!-- Obys Section Coordinate Header -->
+        <div class="obys-section-bar">
+          <span class="obys-section-index">[ 02 // ACADEMIC RESEARCH ]</span>
+          <span class="obys-section-spec">DELHI TECHNOLOGICAL UNIVERSITY</span>
+        </div>
+
+        <div class="section-header">
+          <span class="section-tag">RESEARCH SPOTLIGHT</span>
+          <h2 class="section-title">LLM-Based Mutation Testing for Java Programs</h2>
+          <p class="section-subtitle">Evaluating quantized code models on real-world Java fault benchmarks.</p>
+        </div>
+
+        <div class="research-box obys-card">
+          <!-- Corner Crosses -->
+          <span class="grid-cross grid-cross-tl" aria-hidden="true">+</span>
+          <span class="grid-cross grid-cross-tr" aria-hidden="true">+</span>
+          <span class="grid-cross grid-cross-bl" aria-hidden="true">+</span>
+          <span class="grid-cross grid-cross-br" aria-hidden="true">+</span>
+
+          <div class="card-top-shimmer" aria-hidden="true"></div>
+          <div class="research-info">
+            <div class="research-status-row">
+              <span class="status-chip"><span class="status-dot"></span> Work in Progress</span>
+              <span class="venue-chip">[ MANUSCRIPT IN PREPARATION ]</span>
+            </div>
+
+            <ul class="clean-list">
+              <li>
+                <strong>Defects4J Benchmark Evaluation:</strong> Investigating the use of large language models (<strong>DeepSeek Coder 6.7B</strong>) for automated mutation testing of Java programs using the <strong>Defects4J</strong> benchmark; evaluating mutation score and diversity against rule-based baselines.
+              </li>
+              <li>
+                <strong>4-Bit Quantized LLMut Implementation:</strong> Implementing the <strong>LLMut prompt design</strong> <em>(Wang et al. 2025, ACM TOSEM)</em> with <strong>4-bit NF4 quantisation</strong> on <strong>Kaggle T4 GPU</strong>; manuscript in preparation for submission to a software engineering venue.
+              </li>
+            </ul>
+
+            <div class="tag-list">
+              <span class="shiny-tag magnetic-btn">DeepSeek Coder 6.7B</span>
+              <span class="shiny-tag magnetic-btn">Defects4J</span>
+              <span class="shiny-tag magnetic-btn">4-bit NF4 Quantisation</span>
+              <span class="shiny-tag magnetic-btn">Kaggle T4 GPU</span>
+              <span class="shiny-tag magnetic-btn">Java</span>
+              <span class="shiny-tag magnetic-btn">ACM TOSEM Prompt Design</span>
+            </div>
+          </div>
+
+          <div class="research-code-panel">
+            <div class="code-panel-head">
+              <span>SEMANTIC MUTANT EXAMPLE // DEFECTS4J</span>
+              <span>DEEPSEEK-6.7B (NF4)</span>
+            </div>
+<pre><code><span class="c-muted">// Original Java focal check</span>
+<span class="c-del">- if (index &lt; 0 || index &gt;= size)</span>
+
+<span class="c-muted">// Traditional rule-based operator (trivial flip)</span>
+<span class="c-warn">? if (index &lt; 0 &amp;&amp; index &gt;= size)</span>
+
+<span class="c-muted">// LLMut semantic mutant (tests boundary condition)</span>
+<span class="c-add">+ if (index &lt; 0 || index &gt; size)</span></code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         EXPERIENCE & EDUCATION SECTION (Clean 2-Column Rectangular Timeline)
+         =================================================================== -->
+    <section class="section gsap-reveal-section" id="experience">
+      <div class="section-divider-glow" aria-hidden="true"></div>
+      <div class="container">
+        <!-- Obys Section Coordinate Header -->
+        <div class="obys-section-bar">
+          <span class="obys-section-index">[ 03 // TIMELINE &amp; CREDENTIALS ]</span>
+          <span class="obys-section-spec">CHRONOLOGICAL INDEX</span>
+        </div>
+
+        <div class="two-col-grid">
+          <!-- Work Experience -->
+          <div>
+            <div class="section-header compact">
+              <span class="section-tag">EXPERIENCE</span>
+              <h2 class="section-title">Work History</h2>
+            </div>
+
+            <div class="timeline-list">
+              <div class="timeline-card obys-card">
+                <span class="grid-cross grid-cross-tl" aria-hidden="true">+</span>
+                <span class="grid-cross grid-cross-tr" aria-hidden="true">+</span>
+                <div class="card-top-shimmer" aria-hidden="true"></div>
+                <div class="t-header">
+                  <div>
+                    <span class="obys-index">[ EXP_01 ]</span>
+                    <h3>Android Developer Intern</h3>
+                    <p class="t-inst">Mobile Application Development</p>
+                  </div>
+                  <span class="t-date">Apr 2023 – Jun 2023</span>
+                </div>
+                <ul class="clean-list">
+                  <li>Integrated third-party <strong>REST APIs</strong> and optimised critical code paths, reducing UI jank and improving overall app performance.</li>
+                  <li>Ensured compatibility across <strong>Android versions and screen sizes</strong>; drove iterative improvements from structured end-user feedback.</li>
+                </ul>
+                <div class="tag-list">
+                  <span class="shiny-tag magnetic-btn">Android (Java/Kotlin)</span>
+                  <span class="shiny-tag magnetic-btn">REST APIs</span>
+                  <span class="shiny-tag magnetic-btn">Android Studio</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Education -->
+          <div>
+            <div class="section-header compact">
+              <span class="section-tag">EDUCATION</span>
+              <h2 class="section-title">Academic Background</h2>
+            </div>
+
+            <div class="timeline-list">
+              <div class="timeline-card highlight-card obys-card">
+                <span class="grid-cross grid-cross-tl" aria-hidden="true">+</span>
+                <span class="grid-cross grid-cross-tr" aria-hidden="true">+</span>
+                <div class="card-top-shimmer" aria-hidden="true"></div>
+                <div class="t-header">
+                  <div>
+                    <span class="obys-index">[ EDU_01 ]</span>
+                    <h3>M.Tech in Computer Science</h3>
+                    <p class="t-inst">Delhi Technological University</p>
+                  </div>
+                  <div class="t-right">
+                    <span class="t-date">2025</span>
+                    <span class="t-score">GPA: 7.72 / 10.0</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="timeline-card obys-card">
+                <span class="grid-cross grid-cross-tl" aria-hidden="true">+</span>
+                <span class="grid-cross grid-cross-tr" aria-hidden="true">+</span>
+                <div class="card-top-shimmer" aria-hidden="true"></div>
+                <div class="t-header">
+                  <div>
+                    <span class="obys-index">[ EDU_02 ]</span>
+                    <h3>B.Tech in Computer Science</h3>
+                    <p class="t-inst">Bikaner Technical University</p>
+                  </div>
+                  <div class="t-right">
+                    <span class="t-date">2020 – 2024</span>
+                    <span class="t-score">GPA: 8.24 / 10.0</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="timeline-card cbse-row obys-card">
+                <div class="card-top-shimmer" aria-hidden="true"></div>
+                <div>
+                  <span class="t-date">2019</span>
+                  <h4>Class 12th CBSE</h4>
+                  <span class="t-score">8.5 CGPA</span>
+                </div>
+                <div class="cbse-divider"></div>
+                <div>
+                  <span class="t-date">2017</span>
+                  <h4>Class 10th CBSE</h4>
+                  <span class="t-score">9.8 CGPA</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SKILLS SECTION (Obys Rectangular Modular Grid Matrix)
+         =================================================================== -->
+    <section class="section section-alt gsap-reveal-section" id="skills">
+      <div class="section-divider-glow" aria-hidden="true"></div>
+      <div class="container">
+        <!-- Obys Section Coordinate Header -->
+        <div class="obys-section-bar">
+          <span class="obys-section-index">[ 04 // ENGINEERING MATRIX ]</span>
+          <span class="obys-section-spec">TECHNICAL PROFICIENCIES</span>
+        </div>
+
+        <div class="section-header">
+          <span class="section-tag">PROFICIENCIES</span>
+          <h2 class="section-title">Technical Stack</h2>
+          <p class="section-subtitle">My arsenal of execution, organised into an architectural rectangular grid.</p>
+        </div>
+
+        <div class="skills-table obys-card">
+          <span class="grid-cross grid-cross-tl" aria-hidden="true">+</span>
+          <span class="grid-cross grid-cross-tr" aria-hidden="true">+</span>
+          <span class="grid-cross grid-cross-bl" aria-hidden="true">+</span>
+          <span class="grid-cross grid-cross-br" aria-hidden="true">+</span>
+          
+          <div class="card-top-shimmer" aria-hidden="true"></div>
+          
+          <div class="skill-row">
+            <div class="skill-domain">
+              <span class="domain-num">[ 01 ]</span>
+              <span>Languages</span>
+            </div>
+            <div class="tag-list">
+              <span class="shiny-tag magnetic-btn">Python</span>
+              <span class="shiny-tag magnetic-btn">Dart</span>
+              <span class="shiny-tag magnetic-btn">Java</span>
+              <span class="shiny-tag magnetic-btn">C++</span>
+              <span class="shiny-tag magnetic-btn">SQL</span>
+            </div>
+          </div>
+
+          <div class="skill-row">
+            <div class="skill-domain">
+              <span class="domain-num">[ 02 ]</span>
+              <span>Agentic AI</span>
+            </div>
+            <div class="tag-list">
+              <span class="shiny-tag magnetic-btn">LangGraph</span>
+              <span class="shiny-tag magnetic-btn">LangChain</span>
+              <span class="shiny-tag magnetic-btn">Prompt Engineering</span>
+              <span class="shiny-tag magnetic-btn">RAG</span>
+              <span class="shiny-tag magnetic-btn">Multi-Agent Systems</span>
+              <span class="shiny-tag magnetic-btn">Tool/Function Calling</span>
+            </div>
+          </div>
+
+          <div class="skill-row">
+            <div class="skill-domain">
+              <span class="domain-num">[ 03 ]</span>
+              <span>LLM &amp; NLP</span>
+            </div>
+            <div class="tag-list">
+              <span class="shiny-tag magnetic-btn">OpenAI API</span>
+              <span class="shiny-tag magnetic-btn">HuggingFace Transformers</span>
+              <span class="shiny-tag magnetic-btn">DeepSeek</span>
+              <span class="shiny-tag magnetic-btn">Pydantic</span>
+              <span class="shiny-tag magnetic-btn">LLM Orchestration</span>
+            </div>
+          </div>
+
+          <div class="skill-row">
+            <div class="skill-domain">
+              <span class="domain-num">[ 04 ]</span>
+              <span>Cloud &amp; DevOps</span>
+            </div>
+            <div class="tag-list">
+              <span class="shiny-tag magnetic-btn">AWS EC2</span>
+              <span class="shiny-tag magnetic-btn">AWS Lambda</span>
+              <span class="shiny-tag magnetic-btn">AWS RDS</span>
+              <span class="shiny-tag magnetic-btn">ALB</span>
+              <span class="shiny-tag magnetic-btn">CloudWatch</span>
+              <span class="shiny-tag magnetic-btn">AWS SNS</span>
+              <span class="shiny-tag magnetic-btn">AWS ECR</span>
+              <span class="shiny-tag magnetic-btn">Secrets Manager</span>
+              <span class="shiny-tag magnetic-btn">Terraform</span>
+              <span class="shiny-tag magnetic-btn">Docker</span>
+            </div>
+          </div>
+
+          <div class="skill-row">
+            <div class="skill-domain">
+              <span class="domain-num">[ 05 ]</span>
+              <span>ML / Deep Learning</span>
+            </div>
+            <div class="tag-list">
+              <span class="shiny-tag magnetic-btn">Scikit-learn</span>
+              <span class="shiny-tag magnetic-btn">TensorFlow</span>
+              <span class="shiny-tag magnetic-btn">Keras</span>
+              <span class="shiny-tag magnetic-btn">NumPy</span>
+              <span class="shiny-tag magnetic-btn">Pandas</span>
+              <span class="shiny-tag magnetic-btn">CNN</span>
+              <span class="shiny-tag magnetic-btn">RNN</span>
+              <span class="shiny-tag magnetic-btn">LSTM</span>
+            </div>
+          </div>
+
+          <div class="skill-row">
+            <div class="skill-domain">
+              <span class="domain-num">[ 06 ]</span>
+              <span>Mobile &amp; Tools</span>
+            </div>
+            <div class="tag-list">
+              <span class="shiny-tag magnetic-btn">Flutter</span>
+              <span class="shiny-tag magnetic-btn">Android (Java/Kotlin)</span>
+              <span class="shiny-tag magnetic-btn">FastAPI</span>
+              <span class="shiny-tag magnetic-btn">Git</span>
+              <span class="shiny-tag magnetic-btn">Kaggle</span>
+              <span class="shiny-tag magnetic-btn">HuggingFace Hub</span>
+              <span class="shiny-tag magnetic-btn">Android Studio</span>
+            </div>
+          </div>
+
+          <div class="skill-row">
+            <div class="skill-domain">
+              <span class="domain-num">[ 07 ]</span>
+              <span>Soft Skills</span>
+            </div>
+            <div class="tag-list">
+              <span class="shiny-tag magnetic-btn">Agile Development</span>
+              <span class="shiny-tag magnetic-btn">Problem Solving</span>
+              <span class="shiny-tag magnetic-btn">Team Collaboration</span>
+              <span class="shiny-tag magnetic-btn">Communication</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         CONTACT SECTION (Obys Rectangular Communication Unit)
+         =================================================================== -->
+    <section class="section gsap-reveal-section" id="contact">
+      <div class="section-divider-glow" aria-hidden="true"></div>
+      <div class="container">
+        <!-- Obys Section Coordinate Header -->
+        <div class="obys-section-bar">
+          <span class="obys-section-index">[ 05 // TRANSMISSION ]</span>
+          <span class="obys-section-spec">COORDINATES &amp; CHANNELS</span>
+        </div>
+
+        <div class="contact-panel obys-card">
+          <span class="grid-cross grid-cross-tl" aria-hidden="true">+</span>
+          <span class="grid-cross grid-cross-tr" aria-hidden="true">+</span>
+          <span class="grid-cross grid-cross-bl" aria-hidden="true">+</span>
+          <span class="grid-cross grid-cross-br" aria-hidden="true">+</span>
+
+          <div class="card-top-shimmer" aria-hidden="true"></div>
+          <div class="contact-panel-left">
+            <span class="section-tag">GET IN TOUCH</span>
+            <h2 class="section-title">Let’s engineer something exceptional.</h2>
+            <p class="contact-desc">
+              I’m actively looking for opportunities in <strong>AI/LLM Engineering</strong>, <strong>Cloud Infrastructure</strong>, and <strong>Software Engineering</strong>. Reach out directly via email or phone.
+            </p>
+            <div class="contact-actions">
+              <a href="mailto:theankitmishraa@gmail.com" class="btn btn-primary magnetic-btn">Email Me Directly</a>
+              <button type="button" class="btn btn-secondary copy-btn magnetic-btn" data-copy="theankitmishraa@gmail.com">
+                Copy Email
+              </button>
+              <button type="button" class="btn btn-secondary copy-btn magnetic-btn" data-copy="+91 9950561177">
+                Copy Phone (+91 9950561177)
+              </button>
+            </div>
+          </div>
+
+          <div class="contact-panel-right">
+            <div class="contact-detail-row">
+              <span>[ CHANNEL_01 ] EMAIL</span>
+              <a href="mailto:theankitmishraa@gmail.com">theankitmishraa@gmail.com</a>
+            </div>
+            <div class="contact-detail-row">
+              <span>[ CHANNEL_02 ] PHONE</span>
+              <a href="tel:+919950561177">+91 9950561177</a>
+            </div>
+            <div class="contact-detail-row">
+              <span>[ CHANNEL_03 ] GITHUB</span>
+              <a href="https://github.com/Theankitmishra" target="_blank" rel="noopener noreferrer">github.com/Theankitmishra ↗</a>
+            </div>
+            <div class="contact-detail-row">
+              <span>[ CHANNEL_04 ] LINKEDIN</span>
+              <a href="https://www.linkedin.com/in/theankitmishraa/" target="_blank" rel="noopener noreferrer">linkedin.com/in/theankitmishraa ↗</a>
+            </div>
+            <div class="contact-detail-row">
+              <span>[ CHANNEL_05 ] CAMPUS</span>
+              <span>New Delhi, India (DTU)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="obys-index">[ SYSTEM ]</span>
+        <span>© 2026 Ankit Kumar Mishra · M.Tech CS @ DTU</span>
+      </div>
+      <div class="footer-links">
+        <a href="#top" id="footerReplayBtn" class="magnetic-btn">Replay Intro</a>
+        <a href="https://github.com/Theankitmishra" target="_blank" rel="noopener noreferrer" class="magnetic-btn">GitHub</a>
+        <a href="mailto:theankitmishraa@gmail.com" class="magnetic-btn">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================================================================
+       LIVE MULTI-AGENT SYSTEM SANDBOX MODAL (LANGGRAPH + HITL)
+       =================================================================== -->
+  <div class="agent-modal-backdrop" id="agentModalBackdrop" aria-hidden="true" style="display: none;">
+    <div class="agent-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <!-- Obys Corner Crosses -->
+      <span class="grid-cross grid-cross-tl" aria-hidden="true">+</span>
+      <span class="grid-cross grid-cross-tr" aria-hidden="true">+</span>
+      <span class="grid-cross grid-cross-bl" aria-hidden="true">+</span>
+      <span class="grid-cross grid-cross-br" aria-hidden="true">+</span>
+
+      <!-- Modal Header -->
+      <div class="agent-modal-header">
+        <div class="modal-header-left">
+          <span class="obys-index">[ AI ASSISTANT // REAL-TIME SEARCH ]</span>
+          <h2 class="modal-title" id="modalTitle">Ask Ankit’s AI Assistant</h2>
+          <p class="modal-subtitle">Real-time answers about Ankit's projects, technical skills, DTU research, or any software engineering question.</p>
+        </div>
+        <div class="modal-header-meta">
+          <span class="agent-live-badge"><i class="status-pulse"></i> LIVE AGENT</span>
+          <span class="live-model-tag" id="liveModelTag">MODEL: Real-Time AI + Live Search</span>
+          <button type="button" class="modal-close-btn" id="closeAgentModalBtn" aria-label="Close Assistant">
+            <span>[ ESC / ✕ ]</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Real-Time Search Bar -->
+      <div class="assistant-search-box">
+        <div class="search-input-container">
+          <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="text" id="agentInputQuery" class="assistant-input" placeholder="Ask anything: 'Why hire Ankit?', 'How does his Multi-Agent system work?', or any tech question..." autocomplete="off" />
+          <button type="button" class="search-clear-btn" id="clearSearchBtn" title="Clear query" style="display: none;">✕</button>
+          <button type="button" class="btn btn-primary assistant-submit-btn" id="runAgentGraphBtn">
+            <span>Ask Agent</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+        </div>
+
+        <!-- Quick 1-Click Questions for HR / Non-Tech Recruiters -->
+        <div class="quick-questions-row">
+          <span class="quick-label">Popular for Recruiters:</span>
+          <button type="button" class="quick-chip" data-query="Why should we hire Ankit Kumar Mishra?">
+            💼 Why hire Ankit?
+          </button>
+          <button type="button" class="quick-chip" data-query="How does Ankit's Self-Correcting Multi-Agent AI System work in simple terms?">
+            🤖 Multi-Agent Project
+          </button>
+          <button type="button" class="quick-chip" data-query="Simulate Live Self-Correcting Multi-Agent Cycle">
+            🔄 Self-Correction Cycle
+          </button>
+          <button type="button" class="quick-chip" data-query="Explain Ankit's DeepSeek 6.7B research at Delhi Technological University">
+            🔬 DeepSeek Research
+          </button>
+          <button type="button" class="quick-chip" data-query="What did Ankit build on AWS and how does it detect anomalies?">
+            ☁️ AWS Cloud Project
+          </button>
+          <button type="button" class="quick-chip" data-query="What are Ankit's core technical skills and programming languages?">
+            ⚡ Tech Skills
+          </button>
+          <button type="button" class="quick-chip" data-query="How can I contact Ankit for an interview or job opportunity?">
+            📞 Contact Details
+          </button>
+        </div>
+      </div>
+
+      <!-- Main Live Answer Display Area -->
+      <div class="assistant-results-area" id="assistantResultsArea">
+        <!-- Live Loading Status Bar -->
+        <div class="agent-live-indicator" id="agentLiveIndicator" style="display: none;">
+          <div class="indicator-spinner"></div>
+          <span id="agentIndicatorText">Searching portfolio knowledge base and synthesizing answer...</span>
+        </div>
+
+        <!-- =================================================================
+             LIVE ANIMATED MULTI-AGENT PIPELINE VISUALIZER
+             (Doc Retrieval -> Writer Token Stream -> Agent-as-a-Judge -> HITL)
+             ================================================================= -->
+        <div class="agent-pipeline-visualizer" id="agentPipelineVisualizer" style="display: none;">
+          <!-- Visualizer Header -->
+          <div class="pipeline-header-row">
+            <div class="pipeline-title-group">
+              <span class="pipeline-pulse-dot"></span>
+              <span class="pipeline-title-text" id="pipelineStatusText">Initializing Multi-Agent Pipeline...</span>
+            </div>
+            <div class="pipeline-controls">
+              <span class="pipeline-timer" id="pipelineTimer">0.0s</span>
+              <button type="button" class="pipeline-skip-btn" id="pipelineSkipBtn">⚡ Skip to Answer</button>
+            </div>
+          </div>
+
+          <!-- Animated Stage Step Track -->
+          <div class="pipeline-stages-track">
+            <div class="stage-step" id="stage-retrieval">
+              <div class="stage-icon-wrap">
+                <span class="stage-icon">🔍</span>
+                <span class="stage-badge">01</span>
+              </div>
+              <div class="stage-info">
+                <strong>Doc Retrieval</strong>
+                <span>Tool Calling &amp; Knowledge APIs</span>
+              </div>
+              <div class="stage-status-icon" id="stage-icon-01">⏳</div>
+            </div>
+            <div class="stage-connector" id="connector-01"></div>
+            <div class="stage-step" id="stage-writer">
+              <div class="stage-icon-wrap">
+                <span class="stage-icon">✍️</span>
+                <span class="stage-badge">02</span>
+              </div>
+              <div class="stage-info">
+                <strong>Writer Agent</strong>
+                <span>Grounded Synthesis</span>
+              </div>
+              <div class="stage-status-icon" id="stage-icon-02">⏳</div>
+            </div>
+            <div class="stage-connector" id="connector-02"></div>
+            <div class="stage-step" id="stage-judge">
+              <div class="stage-icon-wrap">
+                <span class="stage-icon">⚖️</span>
+                <span class="stage-badge">03</span>
+              </div>
+              <div class="stage-info">
+                <strong>Agent-as-a-Judge</strong>
+                <span>4-Point Rubric Check</span>
+              </div>
+              <div class="stage-status-icon" id="stage-icon-03">⏳</div>
+            </div>
+            <div class="stage-connector" id="connector-03"></div>
+            <div class="stage-step" id="stage-hitl">
+              <div class="stage-icon-wrap">
+                <span class="stage-icon">🛡️</span>
+                <span class="stage-badge">04</span>
+              </div>
+              <div class="stage-info">
+                <strong>HITL Safety Gate</strong>
+                <span>Human Approval</span>
+              </div>
+              <div class="stage-status-icon" id="stage-icon-04">⏳</div>
+            </div>
+          </div>
+
+          <!-- Live Animation Viewport -->
+          <div class="pipeline-animation-viewport">
+            <!-- Stage 1: Document Retrieval Animation -->
+            <div class="anim-panel" id="panel-docs" style="display: none;">
+              <div class="panel-scanner-bar"></div>
+              <div class="panel-section-title">
+                <span class="p-tag">EXTERNAL TOOL CALLING</span>
+                <span>Grounded Knowledge Base &amp; Documentation Ingestion</span>
+              </div>
+              <div class="retrieval-chips-container" id="retrievalChipsContainer"></div>
+            </div>
+
+            <!-- Stage 2: Writer Token Streaming Animation -->
+            <div class="anim-panel" id="panel-writer" style="display: none;">
+              <div class="stream-typewriter-preview">
+                <div class="typewriter-header">
+                  <span class="typewriter-badge">STREAMING TOKENS:</span>
+                  <span class="token-speed-tag">68 tokens/sec · Temperature 0.2</span>
+                </div>
+                <p class="stream-draft-text" id="streamDraftPreview"></p>
+                <span class="typing-cursor"></span>
+              </div>
+            </div>
+
+            <!-- Stage 3: Agent-as-a-Judge Rubric Checklist & Dynamic Score Dial -->
+            <div class="anim-panel" id="panel-judge" style="display: none;">
+              <div class="judge-evaluation-grid">
+                <div class="judge-rubric-list">
+                  <div class="rubric-item" id="rubric-clarity">
+                    <span class="rubric-icon" id="ricon-clarity">⏳</span>
+                    <span class="rubric-label">Beginner Accessibility &amp; Clarity</span>
+                    <span class="rubric-score" id="rscore-clarity">Pending...</span>
+                  </div>
+                  <div class="rubric-item" id="rubric-analogy">
+                    <span class="rubric-icon" id="ricon-analogy">⏳</span>
+                    <span class="rubric-label">Everyday Real-World Analogy</span>
+                    <span class="rubric-score" id="rscore-analogy">Pending...</span>
+                  </div>
+                  <div class="rubric-item" id="rubric-example">
+                    <span class="rubric-icon" id="ricon-example">⏳</span>
+                    <span class="rubric-label">Concrete Code Snippet &amp; Example</span>
+                    <span class="rubric-score" id="rscore-example">Pending...</span>
+                  </div>
+                  <div class="rubric-item" id="rubric-hallucination">
+                    <span class="rubric-icon" id="ricon-hallucination">⏳</span>
+                    <span class="rubric-label">Zero Hallucination Drift (&lt;0.01)</span>
+                    <span class="rubric-score" id="rscore-hallucination">Pending...</span>
+                  </div>
+                </div>
+                <div class="judge-score-card">
+                  <div class="score-dial">
+                    <span class="score-number" id="judgeScoreNumber">0%</span>
+                    <span class="score-label">QUALITY SCORE</span>
+                  </div>
+                  <span class="score-verdict" id="judgeScoreVerdict">Evaluating rubrics...</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Stage 4: Human-in-the-Loop Safety Gate Card -->
+            <div class="anim-panel" id="panel-hitl" style="display: none;">
+              <div class="hitl-approval-card">
+                <div class="hitl-badge-row">
+                  <span class="hitl-shield-icon">🛡️</span>
+                  <div class="hitl-meta-text">
+                    <strong>Human-in-the-Loop (HITL) Safety Gate</strong>
+                    <span>Criteria verified · 0.00 drift · Approved for production delivery</span>
+                  </div>
+                </div>
+                <div class="hitl-actions">
+                  <button type="button" class="btn btn-primary btn-sm hitl-approve-btn" id="hitlApproveBtn">
+                    <span>✓ Instant Approve &amp; Emit</span>
+                  </button>
+                  <span class="hitl-countdown" id="hitlCountdown">Auto-emitting in 1s...</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Answer Card -->
+        <div class="answer-card" id="answerCard">
+          <div class="answer-welcome-state" id="answerWelcomeState">
+            <div class="welcome-agent-avatar">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+            </div>
+            <h3>Hi, I’m Ankit’s AI Assistant!</h3>
+            <p>I can instantly answer questions about Ankit’s background, work, and skills in clear language. Click any question above or type your own question to see a real-time answer.</p>
+            <div class="welcome-stats-row">
+              <div class="wstat"><strong>🎓 M.Tech CS</strong><span>DTU (Delhi Technological University)</span></div>
+              <div class="wstat"><strong>🤖 AI Systems</strong><span>LangGraph, Agent-as-a-Judge, LLMs</span></div>
+              <div class="wstat"><strong>☁️ Cloud &amp; DevOps</strong><span>AWS, Docker, Terraform, FastAPI</span></div>
+            </div>
+          </div>
+
+          <!-- The Live Streamed Answer Body -->
+          <div class="answer-stream-content" id="answerStreamContent" style="display: none;">
+            <div class="answer-meta-bar">
+              <div class="meta-question-tag">
+                <span class="q-label">QUESTION:</span>
+                <span class="q-text" id="answerQueryText"></span>
+              </div>
+              <div class="meta-status-pill">
+                <span class="status-dot"></span>
+                <span id="answerLatencyPill">Verified in 0.28s</span>
+              </div>
+            </div>
+
+            <div class="answer-body-markdown" id="answerBodyMarkdown">
+              <!-- Dynamically populated answer text -->
+            </div>
+
+            <div class="answer-actions-bar">
+              <button type="button" class="btn btn-secondary btn-sm copy-answer-btn" id="copyAnswerBtn">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                <span>Copy Answer</span>
+              </button>
+              <button type="button" class="btn btn-secondary btn-sm" id="resetAssistantBtn">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+                <span>Ask Another Question</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Optional Accordion for Technical Interviewers / Engineers -->
+        <div class="tech-accordion" id="techAccordion" style="display: none;">
+          <button type="button" class="tech-accordion-header" id="techAccordionToggle">
+            <span>⚙️ View Technical Agent Pipeline &amp; LangGraph State (For Tech Leads)</span>
+            <span class="accordion-arrow">▾</span>
+          </button>
+          <div class="tech-accordion-body" id="techAccordionBody" style="display: none;">
+            <!-- Mini Node Flow Steps -->
+            <div class="mini-graph-flow">
+              <div class="mini-step" id="mstep-start">01. StateGraph Init</div>
+              <span class="marrow">→</span>
+              <div class="mini-step" id="mstep-research">02. Researcher Tool</div>
+              <span class="marrow">→</span>
+              <div class="mini-step" id="mstep-writer">03. Writer Synthesis</div>
+              <span class="marrow">→</span>
+              <div class="mini-step" id="mstep-judge">04. Reviewer Judge</div>
+              <span class="marrow">→</span>
+              <div class="mini-step" id="mstep-emit">05. Final Output</div>
+            </div>
+            <!-- Log or State Preview -->
+            <div class="mini-state-preview">
+              <pre class="mini-state-code" id="miniStateCode"><code>{
+  "active_node": "ReviewerJudge",
+  "factual_score": "98.8%",
+  "hallucination_drift": "0.01",
+  "memory_saver_checkpoint": "chk_live_verified"
+}</code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="agent-modal-footer">
+        <div class="footer-left-info">
+          <span>Powered by Ankit's Multi-Agent Knowledge Engine · Open to Software &amp; AI Engineering Opportunities.</span>
+        </div>
+        <div class="footer-right-actions">
+          <a href="mailto:theankitmishraa@gmail.com" class="btn btn-secondary btn-sm">Contact Ankit</a>
+          <span class="shortcut-pill">Press <kbd>ESC</kbd> to exit</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =======================================================================
+       AWS CLOUD LOG ANALYTICS: INTERACTIVE TELEMETRY & SCREENSHOT GALLERY MODAL
+       ======================================================================= -->
+  <div class="cloud-gallery-backdrop" id="cloudGalleryBackdrop" role="dialog" aria-modal="true" aria-labelledby="cloudGalleryTitle" aria-hidden="true" style="display: none;">
+    <div class="cloud-gallery-modal obys-card">
+      <!-- Obys Corner Crosses -->
+      <span class="grid-cross grid-cross-tl" aria-hidden="true">+</span>
+      <span class="grid-cross grid-cross-tr" aria-hidden="true">+</span>
+      <span class="grid-cross grid-cross-bl" aria-hidden="true">+</span>
+      <span class="grid-cross grid-cross-br" aria-hidden="true">+</span>
+
+      <!-- Modal Header -->
+      <div class="cloud-gallery-header">
+        <div class="cloud-header-left">
+          <div class="cloud-header-index-row">
+            <span class="obys-index">[ 02 // AWS TELEMETRY STUDIO ]</span>
+            <span class="cloud-live-chip"><span class="status-pulse"></span> DTU PRACTICAL 12 LAB BENCHMARKS</span>
+          </div>
+          <h2 class="cloud-modal-title" id="cloudGalleryTitle">Cloud Log Analytics &amp; Anomaly Detection</h2>
+          <p class="cloud-modal-sub">Empirical AWS telemetry, serverless ML Isolation Forest, and live ingestion architecture.</p>
+        </div>
+        <div class="cloud-header-meta">
+          <a href="https://github.com/Theankitmishra/cloud-log-analytics" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm header-gh-btn">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            <span>GitHub Repo ↗</span>
+          </a>
+          <button type="button" class="modal-close-btn" id="closeCloudGalleryBtn" aria-label="Close Telemetry Studio">
+            <span>[ ESC / ✕ ]</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Cloud Architectural Highlights Bar -->
+      <div class="cloud-stats-strip">
+        <div class="cloud-stat-item">
+          <span class="stat-label">PEAK INGESTION</span>
+          <span class="stat-value font-mono">12,400+ <span class="unit">logs/s</span></span>
+        </div>
+        <div class="cloud-stat-divider"></div>
+        <div class="cloud-stat-item">
+          <span class="stat-label">ISOLATION FOREST RECALL</span>
+          <span class="stat-value font-mono">99.4% <span class="unit">accuracy</span></span>
+        </div>
+        <div class="cloud-stat-divider"></div>
+        <div class="cloud-stat-item">
+          <span class="stat-label">DETECTION LATENCY</span>
+          <span class="stat-value font-mono">0.006s <span class="unit">Lambda</span></span>
+        </div>
+        <div class="cloud-stat-divider"></div>
+        <div class="cloud-stat-item">
+          <span class="stat-label">DEVSECOPS POSTURE</span>
+          <span class="stat-value font-mono">0 CVEs <span class="unit">Trivy &amp; IMDSv2</span></span>
+        </div>
+      </div>
+
+      <!-- Tab Navigation -->
+      <div class="cloud-tabs-nav" role="tablist">
+        <button type="button" class="cloud-tab active" role="tab" aria-selected="true" data-tab="tab-dashboard">
+          <span class="tab-icon">📊</span>
+          <span>Live Telemetry Dashboard</span>
+        </button>
+        <button type="button" class="cloud-tab" role="tab" aria-selected="false" data-tab="tab-anomalies">
+          <span class="tab-icon">🧠</span>
+          <span>Isolation Forest ML (/anomalies)</span>
+        </button>
+        <button type="button" class="cloud-tab" role="tab" aria-selected="false" data-tab="tab-ingest">
+          <span class="tab-icon">⚡</span>
+          <span>Bulk Ingestion Pipeline (/logs)</span>
+        </button>
+        <button type="button" class="cloud-tab" role="tab" aria-selected="false" data-tab="tab-swagger">
+          <span class="tab-icon">📖</span>
+          <span>FastAPI OpenAPI &amp; Swagger</span>
+        </button>
+        <button type="button" class="cloud-tab highlight-tab" role="tab" aria-selected="false" data-tab="tab-simulator">
+          <span class="tab-icon">🎮</span>
+          <span>Interactive Traffic Simulator</span>
+        </button>
+      </div>
+
+      <!-- Tab Content Panels -->
+      <div class="cloud-tabs-body">
+        <!-- 1. Telemetry Dashboard -->
+        <div class="cloud-panel active" id="tab-dashboard" role="tabpanel">
+          <div class="cloud-view-grid">
+            <div class="cloud-img-container">
+              <img src="assets/cloud-screenshots/dashboard_live_telemetry.png" alt="AWS Cloud Log Analytics Live Telemetry Dashboard" class="cloud-screenshot-img" loading="lazy" />
+              <div class="img-badge-overlay">Fig 1. Real-Time Chart.js Volume &amp; Latency Analytics via SSE</div>
+            </div>
+            <div class="cloud-details-card">
+              <h3 class="panel-heading">Real-Time Telemetry &amp; SSE Log Streaming</h3>
+              <p class="panel-desc">
+                Production telemetry dashboard hosted on AWS EC2 behind an Application Load Balancer. Streams live structured logs from PostgreSQL 15 over <code>/logs/stream</code> using Server-Sent Events (SSE) with sub-second latency.
+              </p>
+              <div class="tech-spec-box">
+                <div class="spec-row">
+                  <span class="spec-k">AWS Architecture:</span>
+                  <span class="spec-v">EC2 Auto Scaling Group (t3.micro), Multi-AZ RDS PostgreSQL</span>
+                </div>
+                <div class="spec-row">
+                  <span class="spec-k">Ingestion Engine:</span>
+                  <span class="spec-v">FastAPI async dual-mode (AsyncPG Connection Pool + In-Memory buffer)</span>
+                </div>
+                <div class="spec-row">
+                  <span class="spec-k">Streaming Protocol:</span>
+                  <span class="spec-v">Server-Sent Events (SSE) · Non-blocking event loop</span>
+                </div>
+                <div class="spec-row">
+                  <span class="spec-k">Visualization:</span>
+                  <span class="spec-v">Chart.js dynamic telemetry, live error rate gauges, rolling latency</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Isolation Forest ML -->
+        <div class="cloud-panel" id="tab-anomalies" role="tabpanel">
+          <div class="cloud-view-grid">
+            <div class="cloud-img-container">
+              <img src="assets/cloud-screenshots/isolation_forest_anomalies_api.png" alt="Isolation Forest ML Anomaly Detection REST API" class="cloud-screenshot-img" loading="lazy" />
+              <div class="img-badge-overlay">Fig 2. Scikit-Learn Isolation Forest Anomaly Inference Endpoint</div>
+            </div>
+            <div class="cloud-details-card">
+              <h3 class="panel-heading">Serverless ML Anomaly Detection (AWS Lambda)</h3>
+              <p class="panel-desc">
+                Triggered every 5 minutes by Amazon EventBridge. Evaluates 4-dimensional aggregate feature vectors using unsupervised scikit-learn Isolation Forest trees to flag sudden error storms, latency degradation, and anomalous volume surges.
+              </p>
+              <div class="math-callout font-mono">
+                s(x, n) = 2^(-E(h(x)) / c(n))
+              </div>
+              <div class="tech-spec-box">
+                <div class="spec-row">
+                  <span class="spec-k">Feature Space (4D):</span>
+                  <span class="spec-v">[ total_events, error_rate, warn_rate, avg_latency ]</span>
+                </div>
+                <div class="spec-row">
+                  <span class="spec-k">Contamination Factor:</span>
+                  <span class="spec-v">0.05 (calibrated for high recall with &lt; 1% false positives)</span>
+                </div>
+                <div class="spec-row">
+                  <span class="spec-k">Severity Thresholds:</span>
+                  <span class="spec-v">CRITICAL (&gt; 0.85) · HIGH (&gt; 0.70) · MEDIUM (&gt; 0.55) · LOW</span>
+                </div>
+                <div class="spec-row">
+                  <span class="spec-k">Alerting Pipeline:</span>
+                  <span class="spec-v">Amazon SNS (fan-out to DevOps Slack webhook &amp; PagerDuty Email)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Bulk Ingestion Pipeline -->
+        <div class="cloud-panel" id="tab-ingest" role="tabpanel">
+          <div class="cloud-view-grid">
+            <div class="cloud-img-container">
+              <img src="assets/cloud-screenshots/logs_ingestion_api.png" alt="FastAPI Ingestion Pipeline Endpoint" class="cloud-screenshot-img" loading="lazy" />
+              <div class="img-badge-overlay">Fig 3. High-Throughput Bulk Log Ingestion &amp; Sanitization</div>
+            </div>
+            <div class="cloud-details-card">
+              <h3 class="panel-heading">Resilient High-Throughput Log Collector</h3>
+              <p class="panel-desc">
+                Handles multi-tenant microservice logs with Pydantic v2 schema validation, UTC timestamp normalisation, and database failover safeguards.
+              </p>
+              <div class="tech-spec-box">
+                <div class="spec-row">
+                  <span class="spec-k">Endpoint:</span>
+                  <span class="spec-v font-mono">POST /logs/ingest (Batch &amp; Single Event)</span>
+                </div>
+                <div class="spec-row">
+                  <span class="spec-k">Resilience Pattern:</span>
+                  <span class="spec-v">Dual-Mode: Auto-reconnects to RDS pool, fails safe to in-memory deque</span>
+                </div>
+                <div class="spec-row">
+                  <span class="spec-k">Throughput Tested:</span>
+                  <span class="spec-v">12,400+ logs/second under load without dropped packets</span>
+                </div>
+                <div class="spec-row">
+                  <span class="spec-k">Database Indexing:</span>
+                  <span class="spec-v">B-tree on <code>timestamp</code>, Hash on <code>service_name</code> &amp; <code>level</code></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Swagger OpenAPI -->
+        <div class="cloud-panel" id="tab-swagger" role="tabpanel">
+          <div class="cloud-view-grid">
+            <div class="cloud-img-container">
+              <img src="assets/cloud-screenshots/fastapi_swagger_docs.png" alt="FastAPI Swagger UI OpenAPI Specifications" class="cloud-screenshot-img" loading="lazy" />
+              <div class="img-badge-overlay">Fig 4. Interactive OpenAPI 3.1 &amp; Swagger Interactive UI</div>
+            </div>
+            <div class="cloud-details-card">
+              <h3 class="panel-heading">Hardened Cloud DevSecOps &amp; API Contracts</h3>
+              <p class="panel-desc">
+                Fully documented REST endpoints with automated security scanning, health check probes (`/health`), and least-privilege AWS IAM policies.
+              </p>
+              <div class="tech-spec-box">
+                <div class="spec-row">
+                  <span class="spec-k">Security Standards:</span>
+                  <span class="spec-v">IMDSv2 Enforced, Zero Trivy High/Critical Vulnerabilities</span>
+                </div>
+                <div class="spec-row">
+                  <span class="spec-k">Container Profile:</span>
+                  <span class="spec-v">Multi-stage build, unprivileged non-root user (UID 1001)</span>
+                </div>
+                <div class="spec-row">
+                  <span class="spec-k">Infrastructure as Code:</span>
+                  <span class="spec-v">Terraform modular plan (VPC, Subnets, ALB, ASG, RDS, CloudWatch)</span>
+                </div>
+                <div class="spec-row">
+                  <span class="spec-k">API Schema:</span>
+                  <span class="spec-v">OpenAPI 3.1 compatible with typed Pydantic responses</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Interactive Simulator -->
+        <div class="cloud-panel" id="tab-simulator" role="tabpanel">
+          <div class="simulator-wrapper">
+            <div class="simulator-controls-bar">
+              <div class="sim-left-actions">
+                <button type="button" class="btn btn-primary sim-btn" id="simNormalBtn">
+                  <span>🟢 Simulate Normal Workload</span>
+                </button>
+                <button type="button" class="btn btn-secondary sim-btn sim-danger-btn" id="simSpikeBtn">
+                  <span>🔴 Trigger Anomaly Spike (500 Storm)</span>
+                </button>
+                <button type="button" class="btn btn-secondary sim-btn" id="simResetBtn">
+                  <span>↺ Reset Baseline</span>
+                </button>
+              </div>
+              <div class="sim-right-status font-mono" id="simStatusPill">
+                <span class="pulse-status-dot"></span> STATUS: INGESTION STABLE
+              </div>
+            </div>
+
+            <!-- Live Telemetry Meters -->
+            <div class="sim-meters-grid">
+              <div class="sim-meter-card">
+                <span class="meter-title">THROUGHPUT</span>
+                <span class="meter-val font-mono" id="simThroughputVal">1,240 <span class="unit">logs/s</span></span>
+                <div class="meter-bar-track"><div class="meter-bar-fill" id="simThroughputBar" style="width: 25%;"></div></div>
+              </div>
+              <div class="sim-meter-card">
+                <span class="meter-title">AVG LATENCY</span>
+                <span class="meter-val font-mono" id="simLatencyVal">38.4 <span class="unit">ms</span></span>
+                <div class="meter-bar-track"><div class="meter-bar-fill" id="simLatencyBar" style="width: 15%;"></div></div>
+              </div>
+              <div class="sim-meter-card">
+                <span class="meter-title">ERROR RATE</span>
+                <span class="meter-val font-mono" id="simErrorVal">0.4%</span>
+                <div class="meter-bar-track"><div class="meter-bar-fill" id="simErrorBar" style="width: 3%;"></div></div>
+              </div>
+              <div class="sim-meter-card">
+                <span class="meter-title">ISOLATION FOREST SCORE</span>
+                <span class="meter-val font-mono" id="simScoreVal">0.18 <span class="badge-normal">NORMAL</span></span>
+                <div class="meter-bar-track"><div class="meter-bar-fill" id="simScoreBar" style="width: 18%;"></div></div>
+              </div>
+            </div>
+
+            <!-- Live Simulated Event Stream -->
+            <div class="sim-console-box">
+              <div class="sim-console-header">
+                <span class="font-mono">LIVE CLOUDWATCH LOGS &amp; LAMBDA DECISION STREAM</span>
+                <span class="font-mono console-clock" id="simClock">LIVE SSE</span>
+              </div>
+              <div class="sim-console-body font-mono" id="simConsoleBody">
+                <div class="log-row log-info">[INFO] 2026-10-22T04:15:01Z [auth-service] HTTP 200 POST /oauth/token 38ms - user_id=usr_9281</div>
+                <div class="log-row log-info">[INFO] 2026-10-22T04:15:02Z [payment-gateway] HTTP 200 GET /transactions/verify 42ms - tx_id=tx_019</div>
+                <div class="log-row log-info">[INFO] 2026-10-22T04:15:03Z [order-service] HTTP 201 POST /orders/checkout 45ms - cart_id=c_441</div>
+                <div class="log-row log-info">[INFO] 2026-10-22T04:15:04Z [lambda-detector] Evaluated 4D window: [1240, 0.004, 0.012, 41.2] -> score=0.18 (Healthy)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="cloud-gallery-footer">
+        <div class="cloud-footer-hint">
+          <span>💡 <strong>Recruiter Tip:</strong> You can swipe right or press <kbd>ESC</kbd> to return to the portfolio.</span>
+        </div>
+        <div class="cloud-footer-actions">
+          <button type="button" class="btn btn-secondary btn-sm" id="cloudLaunchAiBtn">
+            <span>Ask AI About This AWS Arch ⚡</span>
+          </button>
+          <a href="https://github.com/Theankitmishra/cloud-log-analytics" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+            <span>View GitHub Repository ↗</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
