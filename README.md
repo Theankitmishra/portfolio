@@ -3,7 +3,7 @@
 > **M.Tech in Computer Science, Delhi Technological University (DTU)**  
 > Specializing in Stateful Multi-Agent AI Orchestration, LLM Systems Research & High-Availability Cloud Infrastructure.
 
-[![Live Portfolio](https://img.shields.io/badge/Live%20Demo-Vercel%20Production-0284c7?style=for-the-badge&logo=vercel)](https://theankitmishra.github.io)
+[![Live Portfolio](https://img.shields.io/badge/Live%20Demo-Vercel%20Production-0284c7?style=for-the-badge&logo=vercel)](https://portfolio-virid-nu-3wnb5oe7nu.vercel.app)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-theankitmishraa-0a66c2?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/theankitmishraa/)
 [![GitHub](https://img.shields.io/badge/GitHub-Theankitmishra-181717?style=for-the-badge&logo=github)](https://github.com/Theankitmishra)
 
@@ -45,7 +45,7 @@ npx vercel --prod
 
 ## 📬 Contact & Connect
 
-* 🌐 **Portfolio**: [ankitkumar.dev](https://theankitmishra.github.io)
+* 🌐 **Portfolio**: [portfolio-virid-nu-3wnb5oe7nu.vercel.app](https://portfolio-virid-nu-3wnb5oe7nu.vercel.app)
 * 🐙 **GitHub**: [@Theankitmishra](https://github.com/Theankitmishra)
 * 💼 **LinkedIn**: [linkedin.com/in/theankitmishraa](https://www.linkedin.com/in/theankitmishraa/)
 * 📧 **Email**: [theankitmishraa@gmail.com](mailto:theankitmishraa@gmail.com)
