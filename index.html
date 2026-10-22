@@ -3,6 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('akm_clean_theme');
+        var system = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', saved || system);
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
   <title>Ankit Kumar Mishra — AI/LLM &amp; Cloud Engineer</title>
   <meta name="description" content="Ankit Kumar Mishra — M.Tech Computer Science at Delhi Technological University. Building Agentic AI Systems, LLM Mutation Testing Research, and Production AWS Cloud Infrastructure." />
   <link rel="canonical" href="https://portfolio-virid-nu-3wnb5oe7nu.vercel.app/" />

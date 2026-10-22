@@ -397,10 +397,31 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // =========================================================================
-  // 9. THEME TOGGLE (DARK / LIGHT)
+  // 9. THEME TOGGLE (DEVICE DETECTION + MANUAL OVERRIDE)
   // =========================================================================
-  const savedTheme = localStorage.getItem('akm_clean_theme') || 'dark';
-  htmlEl.setAttribute('data-theme', savedTheme);
+  const getDeviceTheme = () => {
+    return window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+  };
+
+  const savedTheme = localStorage.getItem('akm_clean_theme');
+  const activeTheme = savedTheme || getDeviceTheme();
+  htmlEl.setAttribute('data-theme', activeTheme);
+
+  // Dynamically update theme if user switches their OS mode (only if they haven't manually locked one)
+  if (window.matchMedia) {
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const handleSystemThemeChange = (e) => {
+      if (!localStorage.getItem('akm_clean_theme')) {
+        const newTheme = e.matches ? 'dark' : 'light';
+        htmlEl.setAttribute('data-theme', newTheme);
+      }
+    };
+    if (mediaQuery.addEventListener) {
+      mediaQuery.addEventListener('change', handleSystemThemeChange);
+    } else if (mediaQuery.addListener) {
+      mediaQuery.addListener(handleSystemThemeChange);
+    }
+  }
 
   themeToggle.addEventListener('click', () => {
     const current = htmlEl.getAttribute('data-theme');
