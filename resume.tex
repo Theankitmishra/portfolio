@@ -1,171 +1,143 @@
 %----------------------------------------------------------------------------------------
-%	Modern Executive Technical Resume — Ankit Kumar Mishra
-%	Clean, ATS-Optimized, 1-Page Layout with High-Fidelity Typography
+%	The MIT License (MIT) — Copyright (c) 2021 Jitin Nair
+%	Enhanced & Optimized for Ankit Kumar Mishra
 %----------------------------------------------------------------------------------------
 \documentclass[a4paper,10pt]{article}
 
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{lmodern}
-\usepackage{microtype}
-\usepackage[scale=0.92, top=0.55in, bottom=0.5in, left=0.55in, right=0.55in]{geometry}
-\usepackage{titlesec}
-\usepackage{enumitem}
-\usepackage{tabularx}
-\usepackage{fontawesome5}
+\usepackage{url}
+\usepackage{parskip}
+\RequirePackage{color}
+\RequirePackage{graphicx}
 \usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[scale=0.92, top=0.4cm, bottom=0.4cm]{geometry}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+\usepackage{supertabular}
+\newlength{\fullcollw}
+\setlength{\fullcollw}{0.47\textwidth}
+\usepackage{titlesec}
+\usepackage{multicol}
+\usepackage{multirow}
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{5pt}{5pt}
 \usepackage[unicode, draft=false]{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
+\usepackage{fontawesome5}
 
-%----------------------------------------------------------------------------------------
-%	COLOR PALETTE (Executive Slate & Deep Charcoal)
-%----------------------------------------------------------------------------------------
-\definecolor{primary}{HTML}{09090b}       % Deep Obsidian Text
-\definecolor{accent}{HTML}{1e40af}        % Executive Deep Navy
-\definecolor{subtext}{HTML}{475569}       % Muted Slate
-\definecolor{rulecolor}{HTML}{cbd5e1}     % Subtle Hairline Rule
-\definecolor{iconcolor}{HTML}{334155}     % Icon Slate
+\setlist[itemize]{noitemsep, topsep=1pt, parsep=0pt, partopsep=0pt, leftmargin=*}
+\setlength{\parskip}{1pt}
 
-\hypersetup{
-    colorlinks=true,
-    linkcolor=accent,
-    urlcolor=accent,
-    pdftitle={Ankit Kumar Mishra - Resume},
-    pdfauthor={Ankit Kumar Mishra},
-    pdfsubject={AI & Cloud Systems Engineer Resume}
-}
-
-%----------------------------------------------------------------------------------------
-%	SECTION FORMATTING (Clean Small Caps with Hairline Rule)
-%----------------------------------------------------------------------------------------
-\titleformat{\section}{\large\scshape\raggedright\color{primary}}{}{0em}{}[\color{rulecolor}\titlerule[0.6pt]]
-\titlespacing{\section}{0pt}{7pt}{4pt}
-
-%----------------------------------------------------------------------------------------
-%	LIST & BULLET STYLING (Refined Spacing & Indentation)
-%----------------------------------------------------------------------------------------
-\setlist[itemize]{
-    noitemsep,
-    topsep=1.5pt,
-    parsep=0pt,
-    partopsep=0pt,
-    leftmargin=1.15em,
-    label={\small\color{accent}$\vcenter{\hbox{\tiny$\blacksquare$}}$}
-}
-
-\newcommand{\resumeItem}[1]{
-  \item \small{#1\vspace{1.5pt}}
-}
-
-%----------------------------------------------------------------------------------------
 \begin{document}
 \pagestyle{empty}
-\color{primary}
 
 %----------------------------------------------------------------------------------------
-%	HEADER / CONTACT INFO
+%	TITLE / CONTACT HEADER
 %----------------------------------------------------------------------------------------
-\begin{center}
-    {\fontsize{24pt}{28pt}\selectfont\textbf{\scshape Ankit Kumar Mishra}}\\[5pt]
-    \small{
-        \href{https://portfolio-virid-nu-3wnb5oe7nu.vercel.app}{\color{primary}\faGlobe\enspace\textbf{Portfolio}} \;\textcolor{rulecolor}{$|$}\;
-        \href{https://github.com/Theankitmishra}{\color{primary}\faGithub\enspace Theankitmishra} \;\textcolor{rulecolor}{$|$}\;
-        \href{https://linkedin.com/in/theankitmishraa}{\color{primary}\faLinkedin\enspace Ankit Mishra} \;\textcolor{rulecolor}{$|$}\;
-        \href{mailto:theankitmishraa@gmail.com}{\color{primary}\faEnvelope\enspace theankitmishraa@gmail.com} \;\textcolor{rulecolor}{$|$}\;
-        \href{tel:+919950561177}{\color{primary}\faMobile*\enspace +91 9950561177} \;\textcolor{rulecolor}{$|$}\;
-        {\color{subtext}\faMapMarker*\enspace Delhi, India}
-    }
-\end{center}
-\vspace{-6pt}
+
+\begin{tabularx}{\linewidth}{@{} C @{}}
+\Huge{Ankit Kumar Mishra}\\[6pt]
+\href{https://portfolio-virid-nu-3wnb5oe7nu.vercel.app}{\raisebox{-0.05\height}\faGlobe\ Portfolio} \ $|$ \
+\href{https://github.com/Theankitmishra}{\raisebox{-0.05\height}\faGithub\ Theankitmishra} \ $|$ \
+\href{https://linkedin.com/in/theankitmishraa}{\raisebox{-0.05\height}\faLinkedin\ Ankit Mishra} \ $|$ \
+\href{mailto:theankitmishraa@gmail.com}{\raisebox{-0.05\height}\faEnvelope\ theankitmishraa@gmail.com} \ $|$ \
+\href{tel:+919950561177}{\raisebox{-0.05\height}\faMobile\ +91 9950561177} \ $|$ \
+\raisebox{-0.05\height}\faMapMarker*\ Delhi, India\\
+\end{tabularx}
 
 %----------------------------------------------------------------------------------------
 %	SUMMARY
 %----------------------------------------------------------------------------------------
+
 \section{Summary}
-\small{M.Tech CS student at Delhi Technological University proficient in Agentic AI, LLM systems, AWS deployments, Terraform, and Docker. Building multi-agent AI systems using LangGraph and LangChain. Conducting LLM-based mutation testing research with DeepSeek Coder 6.7B. Skilled in Android development and full-stack development.}
+M.Tech Computer Science student at Delhi Technological University specializing in Agentic AI, LLM systems, AWS cloud architectures, Terraform, and Docker. Architecting self-correcting multi-agent networks with LangGraph and DSPy. Conducting software engineering research on LLM-based mutation testing with DeepSeek Coder 6.7B on Defects4J. Experienced in building high-throughput FastAPI microservices and cross-platform applications.
 
 %----------------------------------------------------------------------------------------
 %	WORK EXPERIENCE
 %----------------------------------------------------------------------------------------
+
 \section{Work Experience}
-\noindent
-\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} l r @{}}
-    \textbf{Android Developer Intern} & \small\color{subtext}\textbf{Apr 2023 -- Jun 2023} \\
-\end{tabular*}
-\vspace{-4pt}
+\begin{tabularx}{\linewidth}{@{}l r@{}}
+\textbf{Android Developer Intern} & \hfill Apr 2023 -- Jun 2023 \\
+\multicolumn{2}{@{}X@{}}{
 \begin{itemize}
-    \resumeItem{Implemented key performance improvements by optimizing API calls and critical code paths, resulting in a measurable reduction of average UI loading time by 20\% across the application.}
-    \resumeItem{Optimized application compatibility across 10+ distinct Android versions and 20+ screen sizes, enhancing user experience and app stability for all stakeholders.}
+    \item Implemented key performance improvements by optimizing API calls and critical code paths, resulting in a measurable reduction of average UI loading time by 20\% across the application.
+    \item Optimized application compatibility across 10+ distinct Android versions and 20+ screen sizes, enhancing user experience and app stability for all stakeholders.
 \end{itemize}
+}\\
+\end{tabularx}
 
 %----------------------------------------------------------------------------------------
 %	RESEARCH
 %----------------------------------------------------------------------------------------
+
 \section{Research}
-\noindent
-\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} l r @{}}
-    \textbf{LLM-Based Mutation Testing for Java Programs} & \small\color{subtext}\textbf{Jan 2025 -- Present} \\
-\end{tabular*}
-\vspace{-4pt}
+\begin{tabularx}{\linewidth}{@{}l r@{}}
+\textbf{LLM-Based Mutation Testing for Java Programs} & \hfill Jan 2025 -- Present \\
+\multicolumn{2}{@{}X@{}}{
 \begin{itemize}
-    \resumeItem{Investigating the use of large language models (DeepSeek Coder 6.7B) for automated mutation testing of Java programs using the Defects4J benchmark; evaluating mutation score and diversity against rule-based baselines.}
-    \resumeItem{Implementing the LLMut prompt design (Wang et al.\ 2025, ACM TOSEM) with 4-bit NF4 quantisation on Kaggle T4 GPU; manuscript in preparation for submission to a software engineering venue.}
+    \item Investigating large language models (DeepSeek Coder 6.7B) for automated mutation testing of Java programs using the Defects4J benchmark; evaluating mutation score and diversity against rule-based baselines.
+    \item Implementing the LLMut prompt design (Wang et al.\ 2025, ACM TOSEM) with 4-bit NF4 quantisation on Kaggle T4 GPU; manuscript in preparation for submission to a software engineering venue.
 \end{itemize}
+}\\
+\end{tabularx}
 
 %----------------------------------------------------------------------------------------
 %	PROJECTS
 %----------------------------------------------------------------------------------------
+
 \section{Projects}
 
-\noindent
-\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} l r @{}}
-    \href{https://github.com/Theankitmishra/self-correcting-multi-agent}{\textbf{Self-Correcting Multi-Agent AI System}} \;\textcolor{rulecolor}{$|$}\; \href{https://portfolio-virid-nu-3wnb5oe7nu.vercel.app}{\scriptsize\color{accent}\faExternalLink*\ Live Demo} & \small\color{subtext}Python $\cdot$ LangGraph $\cdot$ LangChain $\cdot$ OpenAI API $\cdot$ FastAPI \\
-\end{tabular*}
-\vspace{-4pt}
-\begin{itemize}
-    \resumeItem{Architected and engineered a multi-agent AI system using LangGraph StateGraph with specialised agents for autonomous content generation, evaluation, and refinement, achieving 35\% improvement in overall quality and efficiency.}
-    \resumeItem{Engineered self-correcting feedback loops using Agent-as-a-Judge evaluation, reducing LLM hallucination rates by 40\% and improving factual accuracy by 30\%.}
-    \resumeItem{Designed human-in-the-loop approval gates and conditional routing logic, saving 10+ hours per content cycle and ensuring production safety; integrated LLM tool calling for external API connections.}
-    \resumeItem{Built an advanced REST API using FastAPI, facilitating concurrent access for over 500 users and implementing LangGraph checkpointing for state persistence; streamlined user interactions and increased engagement metrics.}
-\end{itemize}
-\vspace{2pt}
+\begin{tabularx}{\linewidth}{@{}l r@{}}
 
-\noindent
-\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} l r @{}}
-    \href{https://github.com/Theankitmishra/cloud-log-analytics}{\textbf{Cloud Log Analytics \& Anomaly Detection}} \;\textcolor{rulecolor}{$|$}\; \href{https://portfolio-virid-nu-3wnb5oe7nu.vercel.app}{\scriptsize\color{accent}\faExternalLink*\ Live Demo} & \small\color{subtext}AWS $\cdot$ FastAPI $\cdot$ Python $\cdot$ Terraform $\cdot$ Docker $\cdot$ scikit-learn \\
-\end{tabular*}
-\vspace{-4pt}
+\href{https://github.com/Theankitmishra/self-correcting-multi-agent}{\textbf{Self-Correcting Multi-Agent AI System}} \ $|$ \ \href{https://portfolio-virid-nu-3wnb5oe7nu.vercel.app}{\small\faExternalLink*\ Live Demo} & \hfill \small Python $\cdot$ LangGraph $\cdot$ LangChain $\cdot$ OpenAI API $\cdot$ FastAPI\\[2pt]
+\multicolumn{2}{@{}X@{}}{
 \begin{itemize}
-    \resumeItem{Built a production-grade cloud log analytics platform on AWS using EC2 Auto Scaling Groups, Application Load Balancer (HTTPS/TLS 1.3), RDS PostgreSQL (Multi-AZ, encrypted), and CloudWatch Logs for real-time log ingestion via SSE.}
-    \resumeItem{Implemented a scheduled AWS Lambda anomaly detector (EventBridge, every 5 min) using scikit-learn IsolationForest on 4-feature time-bucket aggregates; routes CRITICAL/HIGH alerts to SNS (Email + Slack).}
-    \resumeItem{Hardened infrastructure with IMDSv2, least-privilege Security Groups, non-root Docker containers, Trivy CVE scanning, and Terraform-managed secrets via AWS Secrets Manager; automated zero-downtime rolling deploys.}
+    \item Architected and engineered a multi-agent AI system using LangGraph StateGraph with specialised agents for autonomous content generation, evaluation, and refinement, achieving 35\% improvement in overall quality and efficiency.
+    \item Engineered self-correcting feedback loops using Agent-as-a-Judge evaluation, reducing LLM hallucination rates by 40\% and improving factual accuracy by 30\%.
+    \item Designed human-in-the-loop approval gates and conditional routing logic, saving 10+ hours per content cycle and ensuring production safety; integrated LLM tool calling for external API connections.
+    \item Built an advanced REST API using FastAPI, facilitating concurrent access for over 500 users and implementing LangGraph checkpointing for state persistence; streamlined user interactions and increased engagement metrics.
 \end{itemize}
+}\\
+
+\href{https://github.com/Theankitmishra/cloud-log-analytics}{\textbf{Cloud Log Analytics \& Anomaly Detection}} \ $|$ \ \href{https://portfolio-virid-nu-3wnb5oe7nu.vercel.app}{\small\faExternalLink*\ Live Demo} & \hfill \small AWS $\cdot$ FastAPI $\cdot$ Python $\cdot$ Terraform $\cdot$ Docker $\cdot$ scikit-learn\\[2pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{itemize}
+    \item Built a production-grade cloud log analytics platform on AWS using EC2 Auto Scaling Groups, Application Load Balancer (HTTPS/TLS 1.3), RDS PostgreSQL (Multi-AZ, encrypted), and CloudWatch Logs for real-time log ingestion via SSE.
+    \item Implemented a scheduled AWS Lambda anomaly detector (EventBridge, every 5 min) using scikit-learn IsolationForest on 4-feature time-bucket aggregates; routes CRITICAL/HIGH alerts to SNS (Email + Slack).
+    \item Hardened infrastructure with IMDSv2, least-privilege Security Groups, non-root Docker containers, Trivy CVE scanning, and Terraform-managed secrets via AWS Secrets Manager; automated zero-downtime rolling deploys.
+\end{itemize}
+}\\[4pt]
+
+\end{tabularx}
 
 %----------------------------------------------------------------------------------------
 %	EDUCATION
 %----------------------------------------------------------------------------------------
+
 \section{Education}
-\noindent
-\begin{tabularx}{\linewidth}{@{} l X r @{}}
-    2025 & M.Tech in Computer Science at \textbf{Delhi Technological University} & \small\textbf{GPA: 7.92/10.0} \\
-    2020 -- 2024 & B.Tech in Computer Science at \textbf{Bikaner Technical University} & \small\textbf{GPA: 8.24/10.0} \\
-    2019 & Class 12th CBSE & \small\textbf{8.5} \\
-    2017 & Class 10th CBSE & \small\textbf{9.8} \\
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+2024 -- 2026 (Exp.) & M.Tech in Computer Science at \textbf{Delhi Technological University} \hfill (GPA: 7.92/10.0) \\
+2020 -- 2024        & B.Tech in Computer Science at \textbf{Bikaner Technical University} \hfill (GPA: 8.24/10.0) \\
+2019                & Class 12th CBSE \hfill (8.5/10.0) \\
+2017                & Class 10th CBSE \hfill (9.8/10.0) \\
 \end{tabularx}
 
 %----------------------------------------------------------------------------------------
 %	SKILLS
 %----------------------------------------------------------------------------------------
+
 \section{Skills}
-\noindent
-\begin{tabularx}{\linewidth}{@{} p{3.2cm} X @{}}
-    \textbf{Languages} & Python, Dart, Java, C++, SQL \\
-    \textbf{Agentic AI} & LangGraph, LangChain, Prompt Engineering, RAG, Multi-Agent Systems, Tool/Function Calling \\
-    \textbf{ML / DL} & Scikit-learn, TensorFlow, Keras, NumPy, Pandas, CNN, RNN, LSTM \\
-    \textbf{LLM \& NLP} & OpenAI API, HuggingFace Transformers, DeepSeek, Pydantic, LLM Orchestration \\
-    \textbf{Cloud \& DevOps} & AWS (EC2, Lambda, RDS, ALB, CloudWatch, SNS, ECR, Secrets Manager), Terraform, Docker \\
-    \textbf{Mobile} & Flutter, Android (Java/Kotlin) \\
-    \textbf{Tools} & Git, Kaggle, HuggingFace Hub, Android Studio, FastAPI \\
-    \textbf{Practices} & Agile/Scrum, Code Review, Technical Documentation, Cross-Functional Collaboration \\
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+Languages       & Python, Dart, Java, C++, SQL \\
+Agentic AI      & LangGraph, LangChain, DSPy, Multi-Agent Systems, Tool/Function Calling, RAG \\
+ML / DL         & Scikit-learn, Isolation Forest, TensorFlow, Keras, NumPy, Pandas, CNN, RNN \\
+LLM \& NLP      & OpenAI API, DeepSeek Coder, HuggingFace Transformers, Pydantic, Prompt Engineering \\
+Cloud \& DevOps & AWS (EC2, Lambda, RDS, ALB, CloudWatch, SNS, ECR, Secrets Manager), Terraform, Docker \\
+Mobile          & Flutter, Android (Java/Kotlin) \\
+Tools           & Git, GitHub, FastAPI, Linux, Kaggle, HuggingFace Hub, Android Studio \\
+Practices       & Agile/Scrum, CI/CD, Code Review, Technical Documentation, System Design \\
 \end{tabularx}
 
 \end{document}

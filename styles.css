@@ -111,109 +111,42 @@ body.loading {
 }
 
 /* =========================================================================
-   1. CUSTOM CURSOR (SUBTLE PRECISION DOT + THIN LERP RING)
+   1. NATIVE SYSTEM CURSOR (CLEAN, 100% VISIBLE & NATURAL ON ALL DEVICES)
    ========================================================================= */
-@media (pointer: fine) {
-  body.custom-cursor-active,
-  body.custom-cursor-active a,
-  body.custom-cursor-active button {
-    cursor: none;
-  }
+html,
+body {
+  cursor: default !important;
 }
 
+a,
+button,
+[role="button"],
+.btn,
+.icon-btn,
+.menu-btn,
+.quick-chip,
+.cloud-tab,
+.chrome-pill,
+.shiny-tag,
+.copy-btn,
+.modal-close-btn,
+.theme-toggle,
+.audio-btn,
+.sim-btn {
+  cursor: pointer !important;
+}
+
+input,
+textarea,
+[contenteditable="true"] {
+  cursor: text !important;
+}
+
+/* Hide artificial cursor elements to prevent hiding, lagging, or obstruction */
 .cursor-dot,
 .cursor-ring {
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  z-index: 11000;
-  border-radius: 50%;
-  will-change: transform;
-  transform: translate3d(-100px, -100px, 0);
-}
-
-.cursor-dot {
-  width: 6px;
-  height: 6px;
-  margin-left: -3px;
-  margin-top: -3px;
-  background: #ffffff;
-  box-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
-  transition: width 0.2s ease, height 0.2s ease, margin 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-.cursor-ring {
-  width: 34px;
-  height: 34px;
-  margin-left: -17px;
-  margin-top: -17px;
-  border: 1px solid rgba(255, 255, 255, 0.32);
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 75%);
-  transition: width 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-              height 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-              margin 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-              border-color 0.25s ease,
-              background-color 0.25s ease;
-}
-
-body.cursor-hover .cursor-dot {
-  width: 4px;
-  height: 4px;
-  margin-left: -2px;
-  margin-top: -2px;
-  background: #38bdf8;
-  box-shadow: 0 0 10px rgba(56, 189, 248, 0.8);
-}
-
-body.cursor-hover .cursor-ring {
-  width: 52px;
-  height: 52px;
-  margin-left: -26px;
-  margin-top: -26px;
-  border-color: rgba(56, 189, 248, 0.65);
-  background: radial-gradient(circle, rgba(56, 189, 248, 0.08) 0%, transparent 75%);
-}
-
-body.cursor-down .cursor-ring {
-  width: 24px;
-  height: 24px;
-  margin-left: -12px;
-  margin-top: -12px;
-}
-
-/* Light Mode Cursor - High-Contrast Dark Slate & Electric Blue in Light Mode */
-[data-theme="light"] .cursor-dot {
-  background: #09090b;
-  box-shadow: 0 0 8px rgba(9, 9, 11, 0.45);
-}
-
-[data-theme="light"] .cursor-ring {
-  border-color: rgba(9, 9, 11, 0.38);
-  background: radial-gradient(circle, rgba(9, 9, 11, 0.06) 0%, transparent 75%);
-}
-
-[data-theme="light"] body.cursor-hover .cursor-dot {
-  background: #0284c7;
-  box-shadow: 0 0 10px rgba(2, 132, 199, 0.7);
-}
-
-[data-theme="light"] body.cursor-hover .cursor-ring {
-  border-color: rgba(2, 132, 199, 0.75);
-  background: radial-gradient(circle, rgba(2, 132, 199, 0.12) 0%, transparent 75%);
-}
-
-[data-theme="light"] body.cursor-down .cursor-ring {
-  border-color: rgba(9, 9, 11, 0.7);
-  background: radial-gradient(circle, rgba(9, 9, 11, 0.15) 0%, transparent 75%);
-}
-
-@media (pointer: coarse), (max-width: 768px) {
-  .cursor-dot,
-  .cursor-ring,
-  .grid-guides {
-    display: none !important;
-  }
+  display: none !important;
+  pointer-events: none !important;
 }
 
 /* Top Scroll Progress Bar */

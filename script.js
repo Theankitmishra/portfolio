@@ -90,65 +90,11 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // =========================================================================
-  // 2. GSAP-POWERED MAGNETIC CURSOR (GSAP.QUICKTO 120FPS + INERTIA LERP)
+  // 2. NATIVE SYSTEM CURSOR (CLEAN, ZERO INTERFERENCE)
   // =========================================================================
   const isFinePointer = window.matchMedia('(pointer: fine)').matches;
-  if (isFinePointer && cursorDot && cursorRing) {
-    document.body.classList.add('custom-cursor-active');
-
-    if (hasGSAP) {
-      const setDotX = window.gsap.quickTo(cursorDot, 'x', { duration: 0.08, ease: 'power3' });
-      const setDotY = window.gsap.quickTo(cursorDot, 'y', { duration: 0.08, ease: 'power3' });
-      const setRingX = window.gsap.quickTo(cursorRing, 'x', { duration: 0.32, ease: 'power2.out' });
-      const setRingY = window.gsap.quickTo(cursorRing, 'y', { duration: 0.32, ease: 'power2.out' });
-
-      window.addEventListener('mousemove', (e) => {
-        setDotX(e.clientX);
-        setDotY(e.clientY);
-        setRingX(e.clientX);
-        setRingY(e.clientY);
-      }, { passive: true });
-    } else {
-      // High-performance RAF fallback if offline
-      let mouseX = -100, mouseY = -100, ringX = -100, ringY = -100;
-      let rafRunning = false;
-
-      function updateCursor() {
-        const dx = mouseX - ringX;
-        const dy = mouseY - ringY;
-        ringX += dx * 0.2;
-        ringY += dy * 0.2;
-        cursorRing.style.transform = `translate3d(${ringX.toFixed(1)}px, ${ringY.toFixed(1)}px, 0)`;
-
-        if (Math.abs(dx) > 0.1 || Math.abs(dy) > 0.1) {
-          requestAnimationFrame(updateCursor);
-        } else {
-          rafRunning = false;
-        }
-      }
-
-      window.addEventListener('mousemove', (e) => {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-        cursorDot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
-        if (!rafRunning) {
-          rafRunning = true;
-          requestAnimationFrame(updateCursor);
-        }
-      }, { passive: true });
-    }
-
-    window.addEventListener('mousedown', () => document.body.classList.add('cursor-down'));
-    window.addEventListener('mouseup', () => document.body.classList.remove('cursor-down'));
-
-    const hoverElements = document.querySelectorAll(
-      'a, button, .project-card, .timeline-card, .shiny-tag, .chrome-pill, .obys-grid-cell'
-    );
-    hoverElements.forEach((el) => {
-      el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
-      el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
-    });
-  }
+  if (cursorDot) cursorDot.style.display = 'none';
+  if (cursorRing) cursorRing.style.display = 'none';
 
   // =========================================================================
   // 3. GSAP MAGNETIC ATTRACTION ON BUTTONS & PILLS (AWARD-WINNING EFFECT)
